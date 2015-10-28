@@ -1,0 +1,76 @@
+#footer {
+  padding-bottom: 25px;
+  background: $offWhite;
+  padding-top: 25px;
+  border-top: 10px solid $gsaRed;
+  margin-top: 50px;
+  ul {
+    li {
+      padding: 5px 0;
+      line-height: 1;
+        h4 {
+          text-transform: uppercase;
+        }
+    }
+  }
+}
+#footer-bar {
+  background: #E9E0C7;
+  padding: 25px 0;
+  h3{
+    color: $gsaBlue;
+    padding: 45px 0 0 85px;
+    background: url(/resources/images/inner-nav-logo.jpg) no-repeat 0 50%;
+  }
+}
+#footer-links {
+  h4 {
+    margin-bottom: 10px;
+  }
+}
+.social-links {
+  padding-top: 20px;
+    ul {
+      float: right;
+      margin-bottom: 0;
+      li {
+        padding: 0;
+        margin: 0 5px;
+        display: block;
+        float: left;
+        font-size: 30px;
+        color: $gsaBlue;
+        a {
+          display: block;
+          height: 100%;
+          color: $gsaBlue;
+          &:hover {
+            text-decoration: none;
+            color: $gsaLightBlue;
+          }
+        }
+      }
+    }
+  h5 {
+    text-align:right;
+    margin-top: 5px;
+    clear: both;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $gsaBlue;
+  }
+  h3 {
+    @include font-size(27px);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: normal;
+    color: #fff;
+    padding-bottom: 10px;
+    @include large-desktops {
+      @include font-size(25px);
+    }
+    @include desktops {
+      @include font-size(22px);
+    }
+  }
+}

@@ -1,0 +1,79 @@
+#navigation {
+  background: $GSAdarkBlue;
+  @include border-radius(0);
+  border: 0;
+  ul {
+    width: 100%;
+    li {
+      width: 20%;
+      text-align: center;
+        @include desktops {
+          font-size: 12px;
+        }
+      a {
+        color: #fff;
+        text-transform: uppercase;
+        border-right: 1px solid #fff;
+          &:hover, &:active {
+            background: none;
+          }
+      }
+      &#logo {
+        border-right: 0;
+        a {
+          background: $GSAlightBlue;
+          color: #fff!important;
+          border-right: 0;
+          display: block;
+        }
+        #GSA-small {
+          font-size: 30px;
+          display: block;
+          float: left;
+        }
+        #thisIs-small {
+          font-size: 10px;
+          display: block;
+          float: left;
+          line-height: 1;
+          padding-left: 90px;
+          text-align: right;
+          padding-right: 3px;
+            @include large-desktops {
+              padding-left: 60px!important;
+            }
+            @include desktops {
+              padding-left: 0!important;
+            }
+        }
+      }
+      &.active {
+        a {
+          background: #fff;
+          color: $GSAdarkBlue;
+        }
+        &:nth-child(1){
+          a {
+            background: $GSAlightBlue;
+            color: #fff!important;
+            border-right: 0;
+          }
+        }
+      }
+    }
+  }
+  &.locked {
+    top: 105px;
+    width: 1170px;
+    position: fixed;
+    z-index: 2;
+    @include large-desktops {
+      width: 970px;
+      top: 92px;
+    }
+    @include desktops {
+      width: 750px;
+      top: 80px;
+    }
+  }
+}

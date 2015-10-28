@@ -1,0 +1,395 @@
+body {
+  font-family: $gsaBodyFont;
+  font-size: 16px;
+  padding-top: 75px!important;
+  @include large-desktops {
+    padding-top: 62px!important;
+  }
+  @include desktops{
+    padding-top: 50px!important;
+  }
+  @include tablets {
+    padding-top: 30px!important;
+  }
+}
+
+
+#skip {
+  a {
+    position:absolute;
+    left:auto;
+    top:-10000px;
+    height:1px;
+    overflow:hidden;
+    &:focus {
+      position:absolute;
+      height:auto;
+      top: 0;
+      left: 0;
+      background: $gsaLightBlue;
+      text-align: center;
+      z-index:9999;
+      color: #fff;
+      padding: 20px;
+    }
+  }
+}
+.navbar-brand {
+  margin-left: 0!important;
+  float: none;
+  display: block;
+}
+
+// NAVIGATION ITEM MAGIC
+#inner-main-navigation {
+  background: #fff;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 75px;
+  z-index: 9;
+  @include box-shadow(0px 5px 7px -5px, #333);
+  @include large-desktops {
+    height: 63px;
+}
+  @include desktops {
+    height: 50px;
+  }
+  nav {
+    background: none;
+    border: 0;
+    width: 1170px;
+    font-family: $gsaFontFamily;
+    @include border-radius(0);
+    max-height: 100%;
+    padding: 0;
+    margin-bottom: 0;
+    @include large-desktops {
+      width: 970px;
+    }
+    @include desktops {
+      width: 750px;
+    }
+    .navbar-header {
+      width: 6.6%;
+      a {
+        padding: 0;
+      }
+    }
+    .navbar-toggle {
+      margin-top: 20px;
+    }
+    .navbar-collapse {
+      padding: 0;
+    }
+    #navbar-collapse {
+      padding: 0;
+    }
+    .navbar-nav {
+      margin: 0;
+      @include tablets {
+        margin: 0;
+      }
+    }
+  }
+  #main-nav {
+    width: 93.4%;
+    background: none;
+    font-family: $gsaFontFamily;
+    li {
+      a {
+        display: block;
+        position: relative;
+        white-space: normal;
+        text-transform: uppercase;
+        font-size: 13px;
+        &:hover, &:focus {
+          background: rgba(255, 255, 255, 1);
+          color: $navItemColor;
+        }
+        &.highlighted {
+          background: #fff;
+        }
+      }
+      &.open {
+        background: rgba(255, 255, 255, 1);
+      }
+    }
+    > li {
+      background: #fff;
+      background: rgba(255, 255, 255, 1);
+      text-align: center;
+      width: 15.5%;
+      position: static;
+      &.active {
+        > a {
+          background: $primaryNavigationDesktopLeft;
+          @include box-shadow(inset 0px -2px 0 0px, #ccc);
+            &:hover {
+              @include box-shadow(0,0);
+            }
+        }
+      }
+      &:last-child {
+        width: 7%;
+        background: $gsaLightBlue;
+        @include tablets {
+          display: none;
+        }
+        a {
+          &:hover, &:focus {
+            background: inherit;
+          }
+        }
+      }
+      &:nth-child(6) {
+        span {
+          border: 0;
+        }
+      }
+      &:nth-child(5) {
+        > a {
+          padding-top: 20px;
+          padding-bottom: 15px;
+            @include large-desktops {
+              padding-top: 13px;
+              padding-bottom: 9px;
+            }
+            @include desktops {
+              padding-top: 6px;
+              padding-bottom: 3px;
+            }
+        }
+      }
+      > a {
+        @include font-size(22px);
+        text-transform: uppercase;
+        color: $navItemColor;
+        border-right: 1px solid #c8c8c8;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 27.5px;
+        padding-bottom: 27.5px;
+        &.two-line-item {
+          padding-top: 20px;
+          padding-bottom: 15px;
+        }
+        @include large-desktops {
+          @include font-size(19px);
+          padding-top: 21px;
+          padding-bottom: 21px;
+          &.two-line-item {
+            padding-top: 13px;
+            padding-bottom: 9px;
+          }
+        }
+        @include desktops {
+          @include font-size(19px);
+          padding-top: 14px;
+          padding-bottom: 14px;
+          &.two-line-item {
+            padding-top: 6px;
+            padding-bottom: 3px;
+          }
+        }
+        @include tablets {
+          padding: 6px 5px;
+          border-right: 0;
+        }
+        &:last-child {
+          border-right: 0;
+          padding-top: 24px;
+          padding-bottom: 24px;
+          &:hover {
+            background: $gsaLightBlue!important;
+          }
+          @include large-desktops {
+            padding-top: 17.5px;
+            padding-bottom: 17.5px;
+          }
+          @include desktops {
+            padding-top: 12.5px;
+            padding-bottom: 12.5px;
+          }
+        }
+        .sub-arrow {
+          display: none;
+        }
+        &.selected {
+          background: $gsaBeige;
+        }
+        i {
+          color: #fff;
+          font-size: 22px;
+          margin-top: 0;
+          @include desktops {
+            font-size: 19px;
+            margin-top: 0;
+          }
+        }
+        &:hover {
+          background: $primaryNavigationDesktopLeft;
+        }
+        &.highlighted {
+          background: $primaryNavigationDesktopLeft;
+        }
+      }
+      > .dropdown-menu {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden;
+        background: $primaryNavigationDesktopLeft;
+        padding: 20px 0;
+        margin-left: 0 !important;
+        margin-top: 0!important;
+        @include border-radius(0);
+        border: 0;
+        @include box-shadow(2px 2px 5px -2px, rgba(0,0,0,0.6));
+        -webkit-background-clip: padding-box; /* for Safari */
+        background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+        min-height: 345px;
+        > li {
+          text-align: left;
+          width: 33.33%;
+          line-height: 1.8;
+          color: $darkGray;
+            .sub-arrow {
+              top: 50%;
+              margin-top: -7.5px;
+            }
+            a {
+              font-size:14px;
+              padding-top: 12px;
+              padding-bottom: 12px;
+            }
+            @include tablets {
+              width: 100%;
+            }
+            // MIDDLE SECTION OF NAV PULL OUT //
+            > ul {
+              top: 20px !important;
+              bottom: 20px;
+              left: 33.33% !important;
+              margin: 0 !important;
+              padding-top: 0;
+              height: 100%;
+              border: 0;
+              width: 33.33% !important;
+              max-width: 33.33% !important;
+              background: $primaryNavigationDesktopCenter;
+              @include box-shadow(0, 0);
+              @include border-radius(0);
+              @include tablets {
+                width: 100% !important;
+                max-width: 100% !important;
+              }
+              li {
+                a {
+                  line-height: 1;
+                  padding-top: 8px;
+                  padding-bottom: 10px;
+                  text-transform: initial;
+                }
+                @include desktops {
+
+                }
+              }
+            }
+        }
+      }
+    }
+  }
+}
+
+// DISPLAY WITH NAV ON RIGHT SIDE
+.featured-navigation-content {
+  width: 33.33%;
+  overflow: hidden;
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  right: 0;
+  /*@include flexbox;
+  @include flexdirection(column);
+  @include flexAlignItems(center);
+  @include justifyContent(center);*/
+  border-left: 1px solid $gsaBeige;
+  background: $primaryNavigationDesktopRight;
+  > * {
+    padding: 0 20px;
+  }
+  .large-text-display {
+    font-size: 20px;
+    color:  #433f36;
+    text-shadow: 1px 1px 1px #fff;
+  }
+}
+.divider-vertical {
+  position: absolute;
+  width: 1px;
+  background: $gsaBeige;
+  display: block;
+  top: 20px;
+  bottom: 20px;
+  left: 33.2%;
+}
+// Search
+.main-nav-search-field {
+  width: 33%;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  padding: 20px 40px 5px;
+  font-family: $gsaBodyFont;
+  background: $gsaLightBlue;
+  display: none;
+  @include desktops {
+    padding: 20px 10px 5px;
+  }
+  #submit-gsa-search {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: 0;
+    @include transition(all 0.4s);
+    line-height: 2;
+    &:hover {
+      color: $gsaLightBlue;
+      font-weight: bold;
+    }
+  }
+}
+
+// Breadcrumbs
+#breadcrumbs {
+  background: $gsaLightBlue;
+  padding: 6px 0;
+  @include font-size(20px);
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 8;
+  overflow: hidden;
+    > div {
+      padding-left: 0;
+      padding-right: 0;
+      .breadcrumb {
+        padding: 0;
+        margin: 0;
+        text-transform: capitalize;
+        color: $navItemColor;
+        background: none;
+      }
+    }
+}
+
+
+
+
+
+
+
+
+
